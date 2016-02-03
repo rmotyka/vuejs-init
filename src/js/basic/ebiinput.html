@@ -1,0 +1,6 @@
+<div class="form-group has-feedback	" v-bind:class="{ 'has-error': notValid }">
+    <label class="control-label">{{msg}} {{message}}</label>
+    <input type="text" v-model="message" placeholder="edit me" @blur="validate" class="form-control">
+    <span class="glyphicon form-control-feedback" v-bind:class="{ 'glyphicon-remove': notValid }" aria-hidden="true"></span>
+	<span class="help-block" v-if="notValid">{{validationMsg}}</span>    
+</div>

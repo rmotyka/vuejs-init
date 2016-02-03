@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label>{{msg}} {{message}}</label>
+    <input 
+    	type="text" 
+    	class="form-control"
+    	v-model="message" 
+    	placeholder="data" 
+    	@blur="validate" 
+    	data-provide="datepicker" 
+    	data-date-format="yyyy-mm-dd" 
+    	data-date-language="pl">
+	<div v-if="notValid">{{validationMsg}}</div>    
+</div>

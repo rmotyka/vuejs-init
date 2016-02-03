@@ -1,0 +1,21 @@
+<form>
+    <ebiinput msg="Komunikat" :message.sync="message"></ebiinput>
+    <ebiinput msg="Nazwisko:" :message.sync="nazwisko"></ebiinput>
+    <ebiinput msg="Imię:" :message.sync="imie" v-on:validate="validateImie"></ebiinput>
+    <ebidatepicker msg="Data urodzenia:" :message.sync="dataUrodzenia"></ebidatepicker>
+</form>
+<button v-on:click="notify" class="btn btn-primary">Pokaż</button>
+<ebigrid url="http://datatables.net/examples/server_side/scripts/jsonp.php" :devsy="getColumns">
+    <table>
+        <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+    </table>
+</ebigrid>
